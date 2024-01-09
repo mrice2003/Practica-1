@@ -1,3 +1,5 @@
+#Definiciones
+
 def is_reflexive(relation_set):
     elements = {x for pair in relation_set for x in pair}
     return all((x, x) in relation_set for x in elements)
@@ -13,6 +15,7 @@ def classify_relation(relation_set):
     symmetric = is_symmetric(relation_set)
     transitive = is_transitive(relation_set)
 
+#Terminal Outputs
     if reflexive:
         print("(a) R is reflexive")
     else:
@@ -35,6 +38,7 @@ def classify_relation(relation_set):
 
     generate_graph_output(relation_set)
 
+#Generador de Grafica
 def generate_graph_output(relation_set):
     print("digraph example {\n\trankdir=LR;\n\tnode [shape = circle];")
 
@@ -43,5 +47,7 @@ def generate_graph_output(relation_set):
 
     print("}")
 
+#"Main Function aqui se hacen los cambios para esenarios diferentes, se cambia la relacion abajo"
 input_relation = {(0, 0), (0, 1), (0, 3), (1, 0), (1, 1), (2, 2), (3, 0), (3, 3)}
+#Call para que se ejecute el codigo
 classify_relation(input_relation)
